@@ -19,7 +19,7 @@ Me considero entusiasta y disfruto colaborando en equipo, lo que me permite rela
 
 export const EXPERIENCES = [
   {
-    year: "2021 - Present",
+    year: "2021 - Presente",
     role: "Licenciatura en Desarrollo de Software",
     company: "",
     description: ` Instituto de Estudios Superiores, Santa Fe`,
