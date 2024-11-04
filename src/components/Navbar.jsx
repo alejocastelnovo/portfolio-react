@@ -16,7 +16,7 @@ const Navbar = () => {
         rel="noopener noreferrer"
         className="hover:text-cyan-300 transition duration-300"
     >
-        <FaLinkedin />
+        <FaLinkedin className="hover:text-cyan-300 transition duration-300 text-4xl" />
     </a>
     <a 
         href="https://github.com/alejocastelnovo" 
@@ -24,7 +24,7 @@ const Navbar = () => {
         rel="noopener noreferrer"
         className="hover:text-cyan-300 transition duration-300"
     >
-        <FaGithub />
+        <FaGithub className="hover:text-cyan-300 transition duration-300 text-4xl" />
     </a>
     <a 
         href="https://www.instagram.com/alecastelnovo/" 
@@ -32,7 +32,7 @@ const Navbar = () => {
         rel="noopener noreferrer"
         className="hover:text-cyan-300 transition duration-300"
     >
-        <FaInstagram />
+        <FaInstagram className="hover:text-cyan-300 transition duration-300 text-4xl"/>
     </a>
 </div>
 
@@ -46,8 +46,3 @@ const Navbar = () => {
 export default Navbar;
 
 
-{/*             <div className="flex items-center justify-center gap-4 text-2xl">
-                <FaLinkedin className="hover:text-cyan-300 transition duration-300" />
-                <FaGithub className="hover:text-cyan-300 transition duration-300" />
-                <FaInstagram className="hover:text-cyan-300 transition duration-300" />
-            </div> */}

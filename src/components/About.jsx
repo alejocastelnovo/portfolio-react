@@ -1,7 +1,13 @@
 import React from 'react';
-import aboutImg from "../assets/about.jpeg";
-import { ABOUT_TEXT } from "../constants";
+
+/* Framer motion para agregarle animaciones a la pagina */
 import { motion } from 'framer-motion';
+
+/* Imagen about */
+import aboutImg from "../assets/about.jpeg";
+
+/* Import de las constantes para el about y la info */
+import { ABOUT_TEXT } from "../constants";
 
 const About = () => {
     return (
@@ -15,7 +21,7 @@ const About = () => {
                     transition={{duration: 0.5}}
                 className="w-full lg:w-1/2 lg:p-8">
                     <div>
-                        <img className="max-w-sm rounded-full" src={aboutImg} alt="yo" />
+                        <img className= "max-w-sm rounded-full" src={aboutImg} alt="yo" />
                     </div>
                 </motion.div>
 

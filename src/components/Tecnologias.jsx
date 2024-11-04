@@ -1,6 +1,6 @@
 import React from 'react';
 import { FaGithub, FaHtml5, FaNodeJs } from "react-icons/fa";
-import { RiJavascriptLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
+import { RiAngularjsFill, RiAngularjsLine, RiJavascriptLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { motion } from 'framer-motion';
 
 const iconVariants = (duration, delay) => ({
@@ -43,6 +43,15 @@ const Tecnologias = () => {
                     className="rounded-2xl border-4 border-neutral-800 p-4"
                 >
                     <RiJavascriptLine className="text-7xl rounded-md bg-yellow-300 text-black" />
+                </motion.div>
+
+                <motion.div
+                    variants={iconVariants(3, 0.2)}
+                    initial="initial"
+                    animate="animate"
+                    className="rounded-2xl border-4 border-neutral-800 p-4"
+                >
+                    <RiAngularjsLine className="text-7xl rounded-md bg-white-700 text-red-700" />
                 </motion.div>
 
                 <motion.div
