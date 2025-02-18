@@ -8,9 +8,9 @@ export const HERO_CONTENT = `Desarrollador de Software.
 Llevo más de 3 años capacitandome y poniendo en practica mis habilidades. Mi enfoque principal ha sido el desarrollo front-end`;
 
 export const ABOUT_TEXT = ` 
-Tengo 22 años.<br /> <br />
-Estoy finalizando la Tecnicatura en Desarrollo de Software<br /> <br />
-Aprendo rápidamente, me apasiona la tecnología y siempre busco nuevas oportunidades para seguir capacitandome. <br /> <br />
+Tengo 23 años.<br /> <br />
+Soy Técnico en Desarrollo de Software<br /> <br />
+Aprendo rápidamente, me interesa la tecnología y siempre busco nuevas oportunidades para seguir capacitandome. <br /> <br />
 
 Me considero entusiasta y disfruto colaborando en equipo, lo que me permite relacionarme bien y contribuir de manera efectiva en cualquier proyecto.
 `;
@@ -60,23 +60,23 @@ export const PROJECTS = [
     image: parquepadel,
     description:
       "Landing page para una hamburgueseria de mi ciudad. ",
-    technologies: ["React", "Javascript"],
+    technologies: ["React", "Javascript","Tailwind"],
     link: "https://parquedehamburguesas.vercel.app/"
-  },
-  {
-    title: "Portfolio",
-    image: portfolio,
-    description: "Mi portfolio personal",
-    technologies: ["HTML", "CSS", "JavaScript", "React"],
-    link: "https://github.com/alejocastelnovo/portfolio-react"
   },
   {
     title: "Sistema de Gestion ",
     image: sisgestion,
     description:
-      "Mejoramos la interfaz de usuario del sistema de gestion de nuestro instituto.",
+    "Interfaz Sistema de Gestión IES.",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     link: "https://github.com/alejocastelnovo/SG-IES"
+  },
+  {
+    title: "Portfolio",
+    image: portfolio,
+    description: "Este diseño de mi portfolio personal",
+    technologies: ["HTML", "CSS", "JavaScript", "React"],
+    link: "https://github.com/alejocastelnovo/portfolio-react"
   },
   
 ];

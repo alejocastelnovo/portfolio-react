@@ -10,8 +10,8 @@ const Navbar = () => {
             </div>
 
             <div className="flex items-center justify-center gap-4 text-2xl">
-    <a 
-        href="www.linkedin.com/in/castelnovoalejo" 
+    <a
+        href="https://www.linkedin.com/in/castelnovoalejo/" 
         target="_blank" 
         rel="noopener noreferrer"
         className="hover:text-cyan-300 transition duration-300"
