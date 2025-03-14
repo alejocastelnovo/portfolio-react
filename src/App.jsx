@@ -16,6 +16,9 @@ const App = () => {
 
   return (
     <div className="overflow-x-hidden text-neutral-300 antialiased selection:bg-cyan-300 selection:text-cyan-900">
+
+      {/* Codigo p el fondo animado */}
+
       <Particles
         id="tsparticles"
         init={particlesInit}
@@ -86,8 +89,8 @@ const App = () => {
       <div className="container mx-auto px-8">
         <Navbar />
         <Hero />
-        <About />
         <Proyects />
+        <About />
         <Tecnologias />
         <Experience />
         <Contact />
