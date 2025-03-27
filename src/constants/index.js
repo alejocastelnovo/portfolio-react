@@ -2,7 +2,7 @@ import portfolio from "../assets/projects/project-2.jpg";
 import sisgestion from "../assets/projects/project-3.jpg";
 import parquepadel from "../assets/projects/parquepadel.jpeg";
 import clinica from "../assets/projects/clinica.jpeg"
-
+import romapadel from "../assets/projects/romapadel.png"
 
 export const HERO_CONTENT = `Desarrollador de Software. 
 Llevo más de 3 años capacitandome y poniendo en practica mis habilidades. Mi enfoque principal ha sido el desarrollo front-end`;
@@ -49,19 +49,27 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
+    title: "Web Hamburguesería",
+    image: parquepadel,
+    description:
+    "Landing page para una hamburgueseria de mi ciudad. ",
+    technologies: ["React", "Javascript","Tailwind"],
+    link: "https://parquedehamburguesas.vercel.app/"
+  },
+  {
+    title: "Web Roma Padel",
+    image: romapadel,
+    description:
+    "Pagina Web para un Complejo de Padel en Coronda ",
+    technologies: ["React", "Javascript","Tailwind"],
+    link: "https://roma-padel.vercel.app/"
+  },
+  {
     title: "Clinica Virtual",
     image: clinica,
     description: "Proyecto para gestion de turnos de una clínica.",
     technologies: ["Angular", "Node.js","Typescript", "MySql"],
     link: "https://github.com/alejocastelnovo/practicoAngular"
-  },
-  {
-    title: "Web Hamburguesería",
-    image: parquepadel,
-    description:
-      "Landing page para una hamburgueseria de mi ciudad. ",
-    technologies: ["React", "Javascript","Tailwind"],
-    link: "https://parquedehamburguesas.vercel.app/"
   },
   {
     title: "Sistema de Gestion ",
@@ -74,7 +82,7 @@ export const PROJECTS = [
   {
     title: "Portfolio",
     image: portfolio,
-    description: "Este diseño de mi portfolio personal",
+    description: "Link de Github a este portfolio",
     technologies: ["HTML", "CSS", "JavaScript", "React"],
     link: "https://github.com/alejocastelnovo/portfolio-react"
   },
