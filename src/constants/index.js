@@ -3,6 +3,7 @@ import sisgestion from "../assets/projects/project-3.jpg";
 import parquepadel from "../assets/projects/parquepadel.jpeg";
 import clinica from "../assets/projects/clinica.jpeg"
 import romapadel from "../assets/projects/romapadel.png"
+import hostease from "../assets/projects/hostease.jpg"
 
 export const HERO_CONTENT = `Desarrollador de Software. 
 Llevo más de 3 años capacitandome y poniendo en practica mis habilidades. Mi enfoque principal ha sido el desarrollo front-end`;
@@ -78,6 +79,14 @@ export const PROJECTS = [
     "Interfaz Sistema de Gestión IES.",
     technologies: ["HTML", "CSS", "JavaScript", "Bootstrap"],
     link: "https://github.com/alejocastelnovo/SG-IES"
+  },
+  {
+    title: "Sistema de Alquilieres",
+    image: hostease,
+    description:
+    "Sistema de gestion de Hospedajes",
+    technologies: ["Angular", "TypeScript", "Spring Boot", "Node.js", "MySql"],
+    link: "https://github.com/alejocastelnovo/MarketplaceHostease/tree/main"
   },
   {
     title: "Portfolio",
