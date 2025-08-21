@@ -1,17 +1,19 @@
 import { PROJECTS } from "../constants"
 import { motion } from "framer-motion"
 import { useState, useMemo } from "react"
+import { useLanguage } from '../context/LanguageContext';
 
 const Projects = () => {
+    const { t, language } = useLanguage();
     const [selectedCategory, setSelectedCategory] = useState('all');
     const [selectedTech, setSelectedTech] = useState('all');
     
     // Definir categorías de tecnologías
     const techCategories = {
-        'Frontend': ['React', 'Angular', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Tailwind', 'Bootstrap', 'Framer Motion'],
-        'Backend': ['Node.js', 'Spring Boot', 'Python', 'Flask'],
-        'Base de Datos': ['MySQL', 'SQLite'],
-        'Herramientas': ['Electron', 'OpenAI']
+        [t.technologies.frontend]: ['React', 'Angular', 'JavaScript', 'TypeScript', 'HTML', 'CSS', 'Tailwind', 'Bootstrap', 'Framer Motion'],
+        [t.technologies.backend]: ['Node.js', 'Spring Boot', 'Python', 'Flask'],
+        [t.technologies.database]: ['MySQL', 'SQLite'],
+        [t.technologies.tools]: ['Electron', 'OpenAI']
     };
     
     // Obtener todas las tecnologías únicas
@@ -43,7 +45,7 @@ const Projects = () => {
                 whileInView={{opacity:1, y:0}}
                 initial={{opacity:0, Y:-100}}
                 transition={{duration:0.5}}
-            className="my-20 text-center text-4xl">Proyectos </motion.h2>
+            className="my-20 text-center text-4xl">{t.projects.title}</motion.h2>
             
             {/* Filtros desplegables */}
             <motion.div 
@@ -63,7 +65,7 @@ const Projects = () => {
                         className="appearance-none bg-neutral-800 border border-neutral-700 text-neutral-300 px-6 py-3 pr-12 rounded-lg cursor-pointer hover:border-purple-500/50 focus:border-purple-500 focus:outline-none transition-all duration-300 min-w-[180px] text-center"
                     >
                         <option value="all" className="bg-neutral-800 text-neutral-300">
-                            🎯 Todas las categorías
+                            🎯 {language === 'es' ? 'Todas las categorías' : 'All categories'}
                         </option>
                         {Object.keys(techCategories).map((category) => (
                             <option 
@@ -102,7 +104,7 @@ const Projects = () => {
                         className="appearance-none bg-neutral-800 border border-neutral-700 text-neutral-300 px-6 py-3 pr-12 rounded-lg cursor-pointer hover:border-purple-500/50 focus:border-purple-500 focus:outline-none transition-all duration-300 min-w-[180px] text-center"
                     >
                         <option value="all" className="bg-neutral-800 text-neutral-300">
-                            🚀 Todas las tecnologías
+                            🚀 {language === 'es' ? 'Todas las tecnologías' : 'All technologies'}
                         </option>
                         {categoryTechnologies.map((tech) => (
                             <option 
@@ -134,57 +136,81 @@ const Projects = () => {
                 </div>
             </motion.div>
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                {filteredProjects.map((project, index) => (
-                    <motion.div
-                        key={index}
-                        whileInView={{opacity:1, y:0}}
-                        initial={{opacity:0, y:50}}
-                        transition={{duration:0.6, delay: index * 0.1}}
-                        className="bg-neutral-900/50 rounded-lg p-6 border border-neutral-800 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
-                    >
-                        {/* Imagen del proyecto */}
-                        <div className="mb-4">
-                            <img 
-                                src={project.image} 
-                                alt={project.title} 
-                                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
-                            />
-                        </div>
-
-                        {/* Contenido del proyecto */}
-                        <div>
-                            <h6 className="mb-3 text-xl font-semibold">
-                                <a 
-                                    href={project.link}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="hover:text-cyan-300 transition duration-300 flex items-center gap-2"
-                                >
-                                    {project.title}
-                                    <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
-                                    </svg>
-                                </a>
-                            </h6>
-                            
-                            <p className="mb-4 text-neutral-400 text-sm leading-relaxed">{project.description}</p>
-
-                            {/* Tecnologías */}
-                            <div className="flex flex-wrap gap-2">
-                                {project.technologies.map((tech,index) => (
-                                <span 
-                                    key={index} 
-                                    className="rounded bg-neutral-800 px-3 py-1 text-xs font-medium text-purple-400 cursor-help transition-all duration-300 hover:bg-purple-900 hover:text-white border border-neutral-700" 
-                                    title={`Tecnología: ${tech}`}
-                                    role="tooltip"
-                                >
-                                    {tech}
-                                </span>
-                                ))}
+                {filteredProjects.map((project, index) => {
+                    // Buscar la traducción correspondiente al proyecto
+                    let projectTranslation = null;
+                    
+                    // Mapear el título del proyecto a la clave de traducción usando un objeto de mapeo
+                    const projectMapping = {
+                        "Web Hamburguesería": "webHamburgueseria",
+                        "Chatbot IA": "chatbotIA",
+                        "Web Roma Padel": "webRomaPadel",
+                        "Padel Manager": "padelManager",
+                        "Clínica Virtual": "clinicaVirtual",
+                        "Sistema de Gestión IES": "sistemaGestionIES",
+                        "Sistema de Alquileres - Hostease": "hostease",
+                        "Portfolio Personal": "portfolio"
+                    };
+                    
+                    const translationKey = projectMapping[project.title];
+                    if (translationKey && t.projects.items[translationKey]) {
+                        projectTranslation = t.projects.items[translationKey];
+                    }
+                    
+                    return (
+                        <motion.div
+                            key={index}
+                            whileInView={{opacity:1, y:0}}
+                            initial={{opacity:0, y:50}}
+                            transition={{duration:0.6, delay: index * 0.1}}
+                            className="bg-neutral-900/50 rounded-lg p-6 border border-neutral-800 hover:border-purple-500/50 transition-all duration-300 hover:shadow-lg hover:shadow-purple-500/20"
+                        >
+                            {/* Imagen del proyecto */}
+                            <div className="mb-4">
+                                <img 
+                                    src={project.image} 
+                                    alt={projectTranslation ? projectTranslation.title : project.title} 
+                                    className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300" 
+                                />
                             </div>
-                        </div>
-                    </motion.div>
-                ))}
+
+                            {/* Contenido del proyecto */}
+                            <div>
+                                <h6 className="mb-3 text-xl font-semibold">
+                                    <a 
+                                        href={project.link}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="hover:text-cyan-300 transition duration-300 flex items-center gap-2"
+                                    >
+                                        {projectTranslation ? projectTranslation.title : project.title}
+                                        <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+                                        </svg>
+                                    </a>
+                                </h6>
+                                
+                                <p className="mb-4 text-neutral-400 text-sm leading-relaxed">
+                                    {projectTranslation ? projectTranslation.description : project.description}
+                                </p>
+
+                                {/* Tecnologías */}
+                                <div className="flex flex-wrap gap-2">
+                                    {project.technologies.map((tech,index) => (
+                                    <span 
+                                        key={index} 
+                                        className="rounded bg-neutral-800 px-3 py-1 text-xs font-medium text-purple-400 cursor-help transition-all duration-300 hover:bg-purple-900 hover:text-white border border-neutral-700" 
+                                        title={language === 'es' ? `Tecnología: ${tech}` : `Technology: ${tech}`}
+                                        role="tooltip"
+                                    >
+                                        {tech}
+                                    </span>
+                                    ))}
+                                </div>
+                            </div>
+                        </motion.div>
+                    );
+                })}
             </div>
         </div>
     )

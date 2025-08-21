@@ -3,6 +3,7 @@ import { FaDocker, FaGithub, FaNodeJs, FaFire } from "react-icons/fa";
 import {RiAngularjsLine, RiJavascriptLine, RiReactjsLine, RiTailwindCssFill } from "react-icons/ri";
 import { SiTypescript } from "react-icons/si";
 import { motion } from 'framer-motion';
+import { useLanguage } from '../context/LanguageContext';
 
 const iconVariants = (duration, delay) => ({
     initial: { y: 0, opacity: 0.5 },
@@ -20,9 +21,11 @@ const iconVariants = (duration, delay) => ({
 });
 
 const Tecnologias = () => {
+    const { t } = useLanguage();
+    
     return (
         <div id="technologies" className="flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 lg:px-8 border-b border-neutral-800 pb-16 sm:pb-24">
-            <h2 className="my-12 sm:my-16 lg:my-20 text-center text-3xl sm:text-4xl px-4">Tecnologías y Herramientas</h2>
+            <h2 className="my-12 sm:my-16 lg:my-20 text-center text-3xl sm:text-4xl px-4">{t.technologies.title}</h2>
             <motion.div
                 whileInView={{ opacity: 1, x: 0 }}
                 initial={{ opacity: 0, x: -100 }}

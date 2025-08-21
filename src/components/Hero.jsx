@@ -2,6 +2,7 @@ import React from 'react';
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/aleprofile.jpg";
 import { motion } from "framer-motion"
+import { useLanguage } from '../context/LanguageContext';
 
 
 const container = (delay) => ({
@@ -15,6 +16,8 @@ const container = (delay) => ({
 
 
 const Hero = () => {
+    const { t } = useLanguage();
+    
     return (
         <div className=" border-neutral-900 pb-16 lg:mb-35">
             <div className="flex flex-wrap items-center">
@@ -24,17 +27,17 @@ const Hero = () => {
                             variants={container(0)}
                             initial="hidden"
                             animate="visible"
-                            className="pb-4 text-4xl sm:text-6xl lg:text-8xl font-thin tracking-tight lg:mt-16">Alejo Castelnovo</motion.h1>
+                            className="pb-4 text-4xl sm:text-6xl lg:text-8xl font-thin tracking-tight lg:mt-16">{t.hero.name}</motion.h1>
                         <motion.span
                             variants={container(0.5)}
                             initial="hidden"
                             animate="visible"
-                            className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl sm:text-4xl tracking-tight text-transparent">Software Developer</motion.span>
+                            className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-2xl sm:text-4xl tracking-tight text-transparent">{t.hero.title}</motion.span>
                         <motion.p
                             variants={container(1)}
                             initial="hidden"
                             animate="visible"
-                            className="my-2 max-w-xl py-6 font-light tracking-tighter">{HERO_CONTENT}</motion.p>
+                            className="my-2 max-w-xl py-6 font-light tracking-tighter">{t.hero.description}</motion.p>
                     </div>
 
                     <motion.div
@@ -42,14 +45,14 @@ const Hero = () => {
                         initial="hidden"
                         animate="visible"
                         className="flex flex-col items-center lg:items-start text-center lg:text-left pb-4 ">
-                        <h1 className=" py-2  max-w-xl font-light tracking-tighter">Mi Curriculum 👇🏽</h1>
+                        <h1 className=" py-2  max-w-xl font-light tracking-tighter">{t.hero.cv}</h1>
 
                         <a
                             href="/AlejoCastelnovo_CV.pdf" 
                             download="AlejoCastelnovo_CV.pdf"
                             className="bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-black font-bold py-3 px-6 rounded-full inline-flex items-center mt-1 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                         >
-                            📄 Descargar CV
+                            {t.hero.downloadCV}
                         </a>
 
                     </motion.div>

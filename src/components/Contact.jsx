@@ -4,7 +4,11 @@ import {
 
 
 } from "framer-motion";
+import { useLanguage } from '../context/LanguageContext';
+
 const Contact = () => {
+    const { t } = useLanguage();
+    
     return (
 
         <div id="contact" className="border-b border-neutral-900 pb-20">
@@ -12,7 +16,7 @@ const Contact = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 initial={{ opacity: 0, y: -100 }}
                 transition={{ duration: 1.5 }}
-                className="my-10 text-center text-4xl">Contactame!</motion.h1>
+                className="my-10 text-center text-4xl">{t.contact.title}</motion.h1>
 
 
             <div

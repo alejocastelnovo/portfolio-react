@@ -1,8 +1,12 @@
 import React from 'react';
 import logo from "../assets/alejologo.png";
 import { FaLinkedin, FaGithub, FaInstagram } from 'react-icons/fa';
+import LanguageToggle from './LanguageToggle';
+import { useLanguage } from '../context/LanguageContext';
 
 const Navbar = () => {
+    const { t } = useLanguage();
+    
     const scrollToSection = (sectionId) => {
         const element = document.getElementById(sectionId);
         if (element) {
@@ -22,35 +26,36 @@ const Navbar = () => {
                     onClick={() => scrollToSection('projects')}
                     className="hover:text-purple-500 transition duration-300 cursor-pointer"
                 >
-                    Proyectos
+                    {t.navbar.projects}
                 </button>
                 <button 
                     onClick={() => scrollToSection('about')}
                     className="hover:text-purple-500 transition duration-300 cursor-pointer"
                 >
-                    Sobre mí
+                    {t.navbar.about}
                 </button>
                 <button 
                     onClick={() => scrollToSection('technologies')}
                     className="hover:text-purple-500 transition duration-300 cursor-pointer"
                 >
-                    Tecnologías
+                    {t.navbar.technologies}
                 </button>
                 <button 
                     onClick={() => scrollToSection('experience')}
                     className="hover:text-purple-500 transition duration-300 cursor-pointer"
                 >
-                    Experiencia
+                    {t.navbar.experience}
                 </button>
                 <button 
                     onClick={() => scrollToSection('contact')}
                     className="hover:text-purple-500 transition duration-300 cursor-pointer"
                 >
-                    Contacto
+                    {t.navbar.contact}
                 </button>
             </div>
 
             <div className="flex items-center justify-center gap-4 text-2xl">
+                <LanguageToggle />
                 <a
                     href="https://www.linkedin.com/in/castelnovoalejo/" 
                     target="_blank" 
