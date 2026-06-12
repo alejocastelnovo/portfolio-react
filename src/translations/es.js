@@ -39,6 +39,11 @@ export const es = {
     viewCode: "Ver Código",
     technologies: "Tecnologías utilizadas",
     items: {
+      bitacoraTrading: {
+        title: "Bitácora de Trading",
+        description:
+          "Bitácora para hacer seguimiento de mi jornada de trading diaria. Trades, bienestar, recursos y más."
+      },
       webHamburgueseria: {
         title: "Web Hamburguesería",
         description: "Landing page moderna y responsive para una hamburguesería local. Incluye menú digital, horarios, ubicación y sistema de contacto integrado."

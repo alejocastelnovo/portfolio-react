@@ -48,7 +48,7 @@ const Hero = () => {
                         <h1 className=" py-2  max-w-xl font-light tracking-tighter">{t.hero.cv}</h1>
 
                         <a
-                            href="/AlejoCastelnovo_CV.pdf" 
+                            href="https://drive.google.com/file/d/1LUTrf4pI8C334vhOrG9hxeN5zZ158rJu/view?usp=sharing" 
                             download="AlejoCastelnovo_CV.pdf"
                             className="bg-gradient-to-r from-purple-400 to-pink-400 hover:from-purple-500 hover:to-pink-500 text-black font-bold py-3 px-6 rounded-full inline-flex items-center mt-1 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
                         >

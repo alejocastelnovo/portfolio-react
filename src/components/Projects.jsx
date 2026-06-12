@@ -142,6 +142,7 @@ const Projects = () => {
                     
                     // Mapear el título del proyecto a la clave de traducción usando un objeto de mapeo
                     const projectMapping = {
+                        "Bitacora de Trading": "bitacoraTrading",
                         "Web Hamburguesería": "webHamburgueseria",
                         "Chatbot IA": "chatbotIA",
                         "Web Roma Padel": "webRomaPadel",

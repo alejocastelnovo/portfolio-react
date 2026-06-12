@@ -6,12 +6,13 @@ import romapadel from "../assets/projects/romapadel.png"
 import hostease from "../assets/projects/hostease.jpg"
 import chatbot from "../assets/projects/chatbot.jpeg"
 import padelmanager from "../assets/projects/padelmanager.png"
+import bitacoratrading from "../assets/projects/bitacoratrading.png"
 
 export const HERO_CONTENT = `Desarrollador de Software. 
-Llevo más de 3 años capacitandome y poniendo en practica mis habilidades. Mi enfoque principal ha sido el desarrollo front-end`;
+Llevo más de 4 años capacitandome y poniendo en practica mis habilidades. Mi enfoque principal ha sido el desarrollo de apps Full Stack`;
 
 export const ABOUT_TEXT = ` 
-Soy Técnico en Desarrollo de Software, tengo 23 años, oriundo de Santa Fe, Argentina.<br /> <br />
+Soy Técnico en Desarrollo de Software, tengo 24 años, vivo en Argentina.<br /> <br />
 
 Me considero una persona extrovertida que disfruta del trabajo en equipo, lo cual me permite establecer buenas relaciones y aportar valor en cualquier proyecto.<br /> <br />
 `;
@@ -52,12 +53,12 @@ export const EXPERIENCES = [
 
 export const PROJECTS = [
   {
-    title: "Web Hamburguesería",
-    image: parquepadel,
+    title: "Bitacora de Trading",
+    image: bitacoratrading,
     description:
-    "Landing page moderna y responsive para una hamburguesería local. Incluye menú digital, horarios, ubicación y sistema de contacto integrado.",
-    technologies: ["React", "JavaScript", "Tailwind"],
-    link: "https://parquedehamburguesas.vercel.app/"
+    "Bitacora para hacer seguimiento de mi jornada de trading diaria. Trades, Bienestar, Recursos y mas",
+    technologies: ["Next.js", "Firebase Auth", "Firebase Firestore", "Typescript", "Tailwind"],
+    link: "https://bitacora-trading-rho.vercel.app/"
   },
   {
     title: "Chatbot IA",
@@ -66,6 +67,14 @@ export const PROJECTS = [
     "Fork de ChatGPT, usando la API de OpenAI pero personalizado lo maximo posible y configurado para dar consejos, indicaciones, responder dudas acerca de trading.",
     technologies: ["React", "JavaScript", "Tailwind", "Python", "OpenAI"],
     link: "https://trading-chatbot-c2df2.web.app/"
+  },
+  {
+    title: "Web Hamburguesería",
+    image: parquepadel,
+    description:
+    "Landing page moderna y responsive para una hamburguesería local. Incluye menú digital, horarios, ubicación y sistema de contacto integrado.",
+    technologies: ["React", "JavaScript", "Tailwind"],
+    link: "https://parquedehamburguesas.vercel.app/"
   },
   {
     title: "Web Roma Padel",

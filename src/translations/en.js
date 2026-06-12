@@ -39,6 +39,11 @@ export const en = {
     viewCode: "View Code",
     technologies: "Technologies used",
     items: {
+      bitacoraTrading: {
+        title: "Trading Journal",
+        description:
+          "Journal to track my daily trading routine. Trades, wellness, resources, and more."
+      },
       webHamburgueseria: {
         title: "Burger Restaurant Website",
         description: "Modern and responsive landing page for a local burger restaurant. Includes digital menu, hours, location and integrated contact system."
